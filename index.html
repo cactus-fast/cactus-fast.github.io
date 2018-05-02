@@ -10,11 +10,31 @@
         p {
             color: fuchsia;
         }
+        
+        .blinking {
+            animation: opacity 0.25s ease-in-out infinite;
+            opacity: 1;
+            color: aqua;
+        }
+
+        @keyframes opacity {
+          0% {
+            opacity: 1;
+          }
+
+          50% {
+            opacity: 0
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
     </style>
 </head>
 <body>
-    <h1><marquee>🌵 we're getting cactus, fast! 🌵</marquee></h1>
-    <p>it should arrive later this week.</p>
-    <p>get pumped.</p>
+    <h1><marquee truespeed scrolldelay="30">🌵 we're getting cactus, fast! 🌵</marquee></h1>
+    <p>it should arrive <span class="blinking">ON THURSDAY!!!</span></p>
+    <p>wooooooooooooooooo!!</p>
 </body>
 </html>
