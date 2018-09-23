@@ -2,39 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>cactus, fast</title>
+    <title>🌵 cactus, fast 🌵</title>
     <style>
+        html {
+            background-color: olivedrab;
+            text-align: center;
+        }
         marquee {
+            color: fuchsia;
+            display: block;
+            font-family: fantasy;
+            font-size: xx-large;
+            font-style: oblique;
+        }
+
+        h1 {
             color: goldenrod;
         }
-        p {
-            color: fuchsia;
-        }
         
-        .blinking {
-            animation: opacity 0.25s ease-in-out infinite;
-            opacity: 1;
+        p {
+            animation: font-size 1s infinite;
+            color: aqua;
+            font-weight: bolder;
+            font-size: larger;
+            font-family: cursive;
+            height: 10em;
+        }
+
+        marquee span {
             color: aqua;
         }
 
-        @keyframes opacity {
+        @keyframes font-size {
           0% {
-            opacity: 1;
+            font-size: 2em;
           }
 
           50% {
-            opacity: 0
+            font-size: 8em
           }
 
           100% {
-            opacity: 1;
+            font-size: 2em;
           }
+        }
+
+        footer {
+            font-family: monospace;
+            color: greenyellow;
         }
     </style>
 </head>
 <body>
-    <h1><marquee truespeed scrolldelay="30">🌵 we're getting cactus, fast! 🌵</marquee></h1>
-    <p>it should arrive <span class="blinking">ON THURSDAY!!!</span></p>
-    <p>wooooooooooooooooo!!</p>
+    <h1>we're getting <em>more</em> cactus, <strong>even faster</strong>!</h1>
+    <marquee direction="left" truespeed scrolldelay="30">this time it's coming on</marquee>
+    <p>FRIDAY!!!</p>
+    <footer>seconds until cactus: <span id="cactus"></span></footer>
+    <script>
+        const cactus = document.getElementById("cactus")
+				const friday = new Date("2018-09-28T16:00:00Z").valueOf()
+        const now = new Date().valueOf()
+        let delta = Math.floor((friday - now) / 1000)
+				cactus.textContent = delta
+        setInterval(() => {
+            cactus.textContent = --delta
+        }, 1000)
+    </script>
 </body>
 </html>
