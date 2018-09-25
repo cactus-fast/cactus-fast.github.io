@@ -54,18 +54,18 @@
     </style>
 </head>
 <body>
-    <h1>we're getting <em>more</em> cactus, <strong>even faster</strong>!</h1>
-    <marquee direction="left" truespeed scrolldelay="30">this time it's coming on</marquee>
-    <p>FRIDAY!!!</p>
+    <h1>we're getting <em>more</em> cactus, now even <em>faster than ever</em>!</h1>
+    <marquee direction="left" truespeed scrolldelay="30">the cactus arrives on on</marquee>
+    <p>ThUrSdAy!!!</p>
     <footer>seconds until cactus: <span id="cactus"></span></footer>
     <script>
         const cactus = document.getElementById("cactus")
-				const friday = new Date("2018-09-28T16:00:00Z").valueOf()
+				const friday = new Date("2018-09-27T16:00:00Z").valueOf()
         const now = new Date().valueOf()
         let delta = Math.floor((friday - now) / 1000)
 				cactus.textContent = delta
         setInterval(() => {
-            cactus.textContent = --delta
+            cactus.textContent = (--delta).toString()
         }, 1000)
     </script>
 </body>
