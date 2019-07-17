@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>🌵 cactus, fast 🌵</title>
-    <style>
-        html {
-            background-color: olivedrab;
-            text-align: center;
-        }
-        marquee {
-            color: fuchsia;
-            display: block;
-            font-family: fantasy;
-            font-size: xx-large;
-            font-style: oblique;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<title>🌵 cactus, fast 🌵</title>
+		<style>
+			html {
+				background-color: olivedrab;
+				text-align: center;
+			}
+			marquee {
+				color: fuchsia;
+				display: block;
+				font-family: fantasy;
+				font-size: xx-large;
+				font-style: oblique;
+			}
 
-        h1 {
-            color: goldenrod;
-        }
-        
-        p {
-            animation: font-size 1s infinite;
-            color: aqua;
-            font-weight: bolder;
-            font-size: larger;
-            font-family: cursive;
-            height: 10em;
-        }
+			h1 {
+				color: goldenrod;
+			}
 
-        marquee span {
-            color: aqua;
-        }
+			section {
+				animation: font-size 1s infinite;
+				color: aqua;
+				font-weight: bolder;
+				font-size: larger;
+				font-family: cursive;
+				height: 10em;
+			}
 
-        @keyframes font-size {
-          0% {
-            font-size: 2em;
-          }
+			marquee span {
+				color: aqua;
+			}
 
-          50% {
-            font-size: 8em
-          }
+			@keyframes font-size {
+				0% {
+					font-size: 2em;
+				}
 
-          100% {
-            font-size: 2em;
-          }
-        }
+				50% {
+					font-size: 8em;
+				}
 
-        footer {
-            font-family: monospace;
-            color: greenyellow;
-        }
-    </style>
-</head>
-<body>
-    <h1>we're getting <em>more</em> cactus, now even <em>faster than ever</em>!</h1>
-    <marquee direction="left" truespeed scrolldelay="30">the cactus arrives on on</marquee>
-    <p>ThUrSdAy!!!</p>
-    <footer>👽 👽 👽 seconds until cactus: <span id="cactus"></span> 👽 👽 👽</footer>
-    <script>
-        const cactus = document.getElementById("cactus")
-				const friday = new Date("2018-09-27T16:00:00Z").valueOf()
-        const now = new Date().valueOf()
-        let delta = Math.floor((friday - now) / 1000)
-				cactus.textContent = delta
-        setInterval(() => {
-            cactus.textContent = (--delta).toString()
-        }, 1000)
-    </script>
-</body>
+				100% {
+					font-size: 2em;
+				}
+			}
+
+			footer {
+				font-family: monospace;
+				color: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<p>it might be hard to believe, but we're getting even more cactus</p>
+		<p>and guess what</p>
+		<p>we're getting it <i>fast</i></p>
+		<h1>
+			we're getting <em>more</em> cactus, now even <em>faster than ever</em>!
+		</h1>
+		<marquee direction="left" truespeed scrolldelay="30"
+			>the cactus arrives on on</marquee
+		>
+		<footer>
+			👽 👽 👽 seconds until cactus: <span id="cactus"></span> 👽 👽 👽
+		</footer>
+		<section>ThUrSdAy!!!</section>
+		<script>
+			const cactus = document.getElementById("cactus")
+			const friday = new Date("2018-09-27T16:00:00Z").valueOf()
+			const now = new Date().valueOf()
+			let delta = Math.floor((friday - now) / 1000)
+			cactus.textContent = delta
+			setInterval(() => {
+				cactus.textContent = (--delta).toString()
+			}, 1000)
+		</script>
+	</body>
 </html>
